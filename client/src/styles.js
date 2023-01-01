@@ -6,6 +6,7 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     .app {
+      font-family: Monospace;
       display: flex;
       align-items: center;
       justify-content: center;
