@@ -30,6 +30,7 @@ export const seed = async (req, res) => {
     create table clips (
       clip_id serial primary key,
       title varchar,
+      clip text,
       user_id int references users(user_id)
     );
 
