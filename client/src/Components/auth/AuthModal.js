@@ -24,12 +24,16 @@ export default function AuthModal() {
     axios
       .post(`http://localhost:4000/user/${path}`, vals)
       .then((res) => {
-        const { name, email } = res.data;
+        const { name, email, user_id } = res.data;
 
-        localStorage.setItem('profile', JSON.stringify({ name, email }));
+        localStorage.setItem(
+          'profile',
+          JSON.stringify({ name, email, user_id })
+        );
+
         form.resetFields();
         setShow(false);
-        setState((state) => ({ ...state, user: res.data.name }));
+        setState((state) => ({ ...state, user: res.data.name, user_id }));
         navigate('/player');
       })
       .catch((err) => {
