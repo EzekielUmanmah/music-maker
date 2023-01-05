@@ -1,3 +1,4 @@
+import { useRef } from 'react';
 import { Container, Heading } from './styles';
 import { Button } from 'antd';
 import { useNavigate } from 'react-router-dom';
@@ -9,8 +10,20 @@ export default function Header() {
   const [state, setState] = useContext(AppContext);
   const navigate = useNavigate();
 
+  const initialState = {
+    user_id: null,
+    user: null,
+    str: 'Online',
+    status: false,
+    mute: false,
+    refsArray: useRef([]),
+    currClip: [],
+    isRecord: false,
+    clips: null,
+  };
+
   const logout = () => {
-    setState((state) => ({ ...state, user: null, music: [] }));
+    setState(initialState);
     localStorage.clear();
     navigate('/');
   };
