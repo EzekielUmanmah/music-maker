@@ -7,6 +7,7 @@ const columns = [
   {
     title: 'Clip',
     dataIndex: 'clip',
+    responsive: ['lg'],
   },
   {
     dataIndex: 'edit',
