@@ -23,4 +23,8 @@ export const MusicContainer = styled.section`
     flex-direction: column;
     min-width: 60%;
   }
+
+  @media screen and (max-width: 476px) {
+    min-width: 80%;
+  }
 `;
