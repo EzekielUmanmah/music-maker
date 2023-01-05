@@ -21,4 +21,5 @@
 
 - clone the respository
 - install dependencies on client and server
+- create .env in server and add PORT=4000 and CONNECTION_URL='YOUR_POSTGRESSQLDB_URL'
 - **npm start** client and server
