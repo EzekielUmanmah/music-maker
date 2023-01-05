@@ -9,8 +9,8 @@ export default function Dashboard() {
     <Container>
       <Header />
       <MusicContainer>
-        <PianoPad />
         <Display />
+        <PianoPad />
       </MusicContainer>
       <ClipTable />
     </Container>
