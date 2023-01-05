@@ -7,9 +7,14 @@ export const Container = styled.section`
   border-style: groove;
   border-radius: 2%;
   display: flex;
-  flex-flow: row wrap;
   justify-content: space-around;
-  width: 500px;
+  flex-flow: row wrap;
+  width: 60%;
+
+  @media screen and (max-width: 876px) {
+    width: 90%;
+    justify-content: center;
+  }
 `;
 
 export const Pad = styled.button`
@@ -27,6 +32,11 @@ export const Pad = styled.button`
   text-align: center;
   border-radius: 50%;
   outline: none;
+
+  @media screen and (max-width: 300px) {
+    width: 3em;
+    height: 3em;
+  }
 
   :active,
   .keydown {

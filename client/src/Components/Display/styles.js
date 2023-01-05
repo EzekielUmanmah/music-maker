@@ -9,12 +9,23 @@ export const Container = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @media screen and (max-width: 876px) {
+    width: 94%;
+  }
 `;
 
 export const ContainerBtns = styled.div`
   display: flex;
   justify-content: space-between;
-  width: 50%;
+  width: 40%;
+
+  @media screen and (max-width: 876px) {
+    flex-direction: column;
+    width: 10%;
+    justify-content: center;
+    padding: 0.5em;
+  }
 `;
 
 export const Output = styled.p`
@@ -33,7 +44,7 @@ export const Button = styled.button`
   cursor: pointer;
   border: none;
   outline: none;
-  height: 32px;
+  height: 2.5em;
   background: #212121;
   margin-top: 0.5em;
   box-shadow: 0px 0px 2px 0.2px #616161 inset, 2.5px 0px 1px 0.5px black,
@@ -57,5 +68,9 @@ export const Button = styled.button`
   .record-btn {
     width: 20px;
     font-size: 1.5em;
+  }
+
+  @media screen and (max-width: 876px) {
+    width: 2.5em;
   }
 `;
