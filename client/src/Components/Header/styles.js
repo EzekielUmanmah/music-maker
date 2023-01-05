@@ -7,8 +7,8 @@ export const Container = styled.header`
   background-color: #565759;
   color: #d3d7e0;
   align-items: center;
-  position: fixed;
-  top: 0;
+  // position: fixed;
+  // top: 0;
 `;
 
 export const Heading = styled.h1``;
