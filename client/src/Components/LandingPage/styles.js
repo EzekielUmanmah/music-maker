@@ -19,10 +19,12 @@ export const Title = styled.h1`
   z-index: 1;
   font-size: 5em;
   font-weight: bold;
-`;
+  text-align: center;
+  -webkit-box-shadow: 3px 0px 19px 0px rgba(224, 224, 224, 1);
+  -moz-box-shadow: 3px 0px 19px 0px rgba(224, 224, 224, 1);
+  box-shadow: 3px 0px 19px 0px rgba(224, 224, 224, 1);
 
-export const Sub = styled.sub`
-  font-size: 1.5em;
-  font-style: italic;
-  color: #dadfeb;
+  @media screen and (max-width: 678px) {
+    font-size: 3em;
+  }
 `;
