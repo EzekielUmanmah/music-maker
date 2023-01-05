@@ -8,6 +8,7 @@ import { useContext } from 'react';
 
 export default function Header() {
   const [state, setState] = useContext(AppContext);
+  const user = JSON.parse(localStorage.getItem('profile'));
   const navigate = useNavigate();
 
   const initialState = {
@@ -30,7 +31,7 @@ export default function Header() {
 
   return (
     <Container>
-      <Heading>Welcome to MusicMaker, {state.user || 'No Name Found'}</Heading>
+      <Heading>Welcome to MusicMaker, {user.name || 'No Name Found'}</Heading>
       <Button onClick={logout}>Log Out</Button>
     </Container>
   );
