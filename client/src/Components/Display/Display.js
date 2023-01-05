@@ -9,16 +9,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faPowerOff,
   faMicrophone,
-  faCirclePlay,
-  // faPause,
   faSave,
 } from '@fortawesome/free-solid-svg-icons';
 import { AppContext } from '../../App';
-// import { createClip, getClips } from '../../api/api';
 
 export default function Display() {
   const [state, setState] = useContext(AppContext);
-  const { str, status, isRecord, currClip } = state;
+  const { str, status, isRecord } = state;
   const [showModal, setShowModal] = useState(false);
   const [form] = Form.useForm();
   const user = JSON.parse(localStorage.getItem('profile'));
