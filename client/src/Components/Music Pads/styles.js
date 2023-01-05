@@ -9,8 +9,7 @@ export const Container = styled.section`
   display: flex;
   flex-flow: row wrap;
   justify-content: space-around;
-  width: 200px;
-  border: 5px solid;
+  width: 500px;
 `;
 
 export const Pad = styled.button`
