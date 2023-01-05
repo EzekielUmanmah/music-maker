@@ -8,16 +8,20 @@ import { GlobalStyle } from './styles';
 export const AppContext = createContext();
 
 export function App() {
-  const [state, setState] = useState({
+  const initialState = {
+    user_id: null,
     user: null,
     str: 'Online',
-    status: true,
+    status: false,
     mute: false,
     refsArray: useRef([]),
-    music: [],
+    currClip: [],
     isRecord: false,
-  });
-  // console.log('app: ', state);
+    clips: null,
+  };
+
+  const [state, setState] = useState(initialState);
+
   return (
     <div className='app'>
       <AppContext.Provider value={[state, setState]}>
