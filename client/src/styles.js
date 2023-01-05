@@ -10,7 +10,7 @@ export const GlobalStyle = createGlobalStyle`
       display: flex;
       align-items: center;
       justify-content: center;
-      height: 100vh;
+      // height: 100vh;
       background-color: #757575;
     }
 
