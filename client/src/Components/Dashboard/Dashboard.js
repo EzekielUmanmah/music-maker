@@ -1,14 +1,18 @@
 import PianoPad from '../Music Pads/PianoPad';
-import Player from '../Player/Player';
 import Header from '../Header/Header';
-import { Container } from './styles';
+import Display from '../Display/Display';
+import ClipTable from '../Table/ClipTable';
+import { Container, MusicContainer } from './styles';
 
 export default function Dashboard() {
   return (
     <Container>
       <Header />
-      <PianoPad />
-      <Player />
+      <MusicContainer>
+        <PianoPad />
+        <Display />
+      </MusicContainer>
+      <ClipTable />
     </Container>
   );
 }
