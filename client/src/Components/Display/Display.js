@@ -19,8 +19,6 @@ import { AppContext } from '../../App';
 export default function Display() {
   const [state, setState] = useContext(AppContext);
   const { str, status, isRecord, currClip } = state;
-  const [idx, setIdx] = useState(0);
-  const [isPlay, setIsPlay] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [form] = Form.useForm();
   const user = JSON.parse(localStorage.getItem('profile'));
@@ -33,7 +31,7 @@ export default function Display() {
     };
     axios
       .post('http://localhost:4000/clips', data)
-      .then((res) => {
+      .then(() => {
         message.success('Clip Saved!');
         setState((state) => ({
           ...state,
@@ -60,32 +58,6 @@ export default function Display() {
       .catch((err) => console.log('getClips err: ', err));
   };
 
-  const play = () => {
-    setIsPlay((prev) => !prev);
-
-    if (isPlay) {
-      goToNext();
-    }
-  };
-  const goToNext = () => {
-    if (idx < currClip.length - 1) {
-      setIdx((prev) => (prev += 1));
-    }
-  };
-
-  const createAudioPlayer = () => {
-    const { currentFileIndex, audioFiles } = this.state;
-
-    return (
-      <audio
-        src={audioFiles[currentFileIndex].source}
-        onEnded={this.goToNextSong}
-        id='play'
-        // autoPlay
-      />
-    );
-  };
-
   return (
     <Container>
       <h1 style={{ color: 'white' }}>MusicMaker</h1>
@@ -96,6 +68,26 @@ export default function Display() {
         {status ? str : null}
       </Output>
       <ContainerBtns>
+        <CSSTransition classNames='power' appear in={!status} timeout={500}>
+          <Button
+            onClick={() =>
+              setState((state) => ({
+                ...state,
+                status: !state.status,
+                isRecord: false,
+              }))
+            }
+          >
+            <FontAwesomeIcon className='power-btn' icon={faPowerOff} />
+          </Button>
+        </CSSTransition>
+
+        {isRecord && (
+          <Button onClick={() => setShowModal((prev) => !prev)}>
+            <FontAwesomeIcon className='save-btn' icon={faSave} />
+          </Button>
+        )}
+
         <CSSTransition classNames='record' appear in={!isRecord} timeout={500}>
           <Button
             disabled={!status}
@@ -111,33 +103,8 @@ export default function Display() {
             <FontAwesomeIcon className='record-btn' icon={faMicrophone} />
           </Button>
         </CSSTransition>
-
-        <CSSTransition classNames='power' appear in={!status} timeout={500}>
-          <Button
-            onClick={() =>
-              setState((state) => ({
-                ...state,
-                status: !state.status,
-                isRecord: false,
-              }))
-            }
-          >
-            <FontAwesomeIcon className='power-btn' icon={faPowerOff} />
-          </Button>
-        </CSSTransition>
-
-        <CSSTransition classNames='play' appear in={!isPlay} timeout={500}>
-          <Button onClick={play}>
-            <FontAwesomeIcon className='play-btn' icon={faCirclePlay} />
-          </Button>
-        </CSSTransition>
-        {createAudioPlayer}
       </ContainerBtns>
-      {isRecord && (
-        <Button onClick={() => setShowModal((prev) => !prev)}>
-          <FontAwesomeIcon className='save-btn' icon={faSave} />
-        </Button>
-      )}
+
       <Modal
         title='Save your clip?'
         open={showModal}
