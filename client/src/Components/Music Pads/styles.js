@@ -10,6 +10,7 @@ export const Container = styled.section`
   justify-content: space-around;
   flex-flow: row wrap;
   width: 60%;
+  column-gap: 0.5em;
 
   @media screen and (max-width: 876px) {
     width: 90%;
