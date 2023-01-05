@@ -31,7 +31,7 @@ export default function Header() {
 
   return (
     <Container>
-      <Heading>Welcome to MusicMaker, {user.name || 'No Name Found'}</Heading>
+      <Heading>Welcome, {user.name || 'No Name Found'}</Heading>
       <Button onClick={logout}>Log Out</Button>
     </Container>
   );
