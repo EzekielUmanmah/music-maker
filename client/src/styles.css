@@ -1,0 +1,144 @@
+.fade,
+.fade-appear {
+  opacity: 0.5;
+}
+.fade,
+.fade-appear-active {
+  opacity: 0.5;
+  transition: all 0.5s;
+}
+.fade,
+.fade-appear-done {
+  opacity: 0.5;
+}
+.fade,
+.fade-enter {
+  opacity: 1;
+}
+.fade,
+.fade-enter-active {
+  opacity: 0.5;
+  transition: all 0.5s;
+}
+.fade,
+.fade-enter-done:not(.fade-appear-done) {
+  opacity: 0.5;
+}
+.fade,
+.fade-exit {
+  opacity: 0.5;
+}
+.fade,
+.fade-exit-active {
+  opacity: 1;
+  transition: all 0.5s;
+}
+.fade,
+.fade-exit-done {
+  opacity: 1;
+}
+
+.power-appear {
+  color: #9e9e9e;
+  text-shadow: 0 0 0px;
+}
+.power-appear-active {
+  color: #9e9e9e;
+  transition: all 0.5s;
+  text-shadow: 0 0 0px;
+}
+.power-enter {
+  color: #76ff03;
+  text-shadow: 0 0 3px #76ff03;
+}
+.power-enter-active {
+  color: #9e9e9e;
+  transition: all 0.5s;
+  text-shadow: 0 0 0px #9e9e9e;
+}
+.power-enter-done {
+  color: #9e9e9e;
+}
+.power-exit {
+  color: #9e9e9e;
+  text-shadow: 0 0 0px #9e9e9e;
+}
+.power-exit-active {
+  color: #76ff03;
+  text-shadow: 0 0 8px #b2ff59;
+  transition: all 0.5s;
+}
+.power-exit-done {
+  text-shadow: 0 0 8px #b2ff59;
+  color: #76ff03;
+}
+
+.record-appear {
+  color: #9e9e9e;
+  text-shadow: 0 0 0px;
+}
+.record-appear-active {
+  color: #9e9e9e;
+  transition: all 0.5s;
+  text-shadow: 0 0 0px;
+}
+.record-enter {
+  color: #d31a1a;
+  text-shadow: 0 0 3px #d31a1a;
+}
+.record-enter-active {
+  color: #9e9e9e;
+  transition: all 0.5s;
+  text-shadow: 0 0 0px #9e9e9e;
+}
+.record-enter-done {
+  color: #9e9e9e;
+}
+.record-exit {
+  color: #9e9e9e;
+  text-shadow: 0 0 0px #9e9e9e;
+}
+.record-exit-active {
+  color: #d31a1a;
+  text-shadow: 0 0 8px #d31a1a;
+  transition: all 0.5s;
+}
+.record-exit-done {
+  text-shadow: 0 0 8px #d31a1a;
+  color: #d31a1a;
+}
+
+.play-appear {
+  color: #9e9e9e;
+  text-shadow: 0 0 0px;
+}
+.play-appear-active {
+  color: #9e9e9e;
+  transition: all 0.5s;
+  text-shadow: 0 0 0px;
+}
+.play-enter {
+  color: #58b3b8;
+  text-shadow: 0 0 3px #58b3b8;
+}
+.play-enter-active {
+  color: #9e9e9e;
+  transition: all 0.5s;
+  text-shadow: 0 0 0px #9e9e9e;
+}
+.play-enter-done {
+  color: #9e9e9e;
+}
+.play-exit {
+  color: #9e9e9e;
+  text-shadow: 0 0 0px #9e9e9e;
+}
+.play-exit-active {
+  color: #58b3b8;
+  text-shadow: 0 0 8px #58b3b8;
+  transition: all 0.5s;
+}
+.play-exit-done {
+  text-shadow: 0 0 8px #58b3b8;
+  color: #58b3b8;
+}
