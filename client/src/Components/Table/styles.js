@@ -6,4 +6,8 @@ export const Container = styled.section`
   @media screen and (max-width: 876px) {
     width: 70%;
   }
+
+  @media screen and (max-width: 476px) {
+    width: 90%;
+  }
 `;
