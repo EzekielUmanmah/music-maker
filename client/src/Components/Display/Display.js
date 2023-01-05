@@ -98,6 +98,7 @@ export default function Display() {
       <ContainerBtns>
         <CSSTransition classNames='record' appear in={!isRecord} timeout={500}>
           <Button
+            disabled={!status}
             onClick={() =>
               setState((state) => ({
                 ...state,
@@ -114,7 +115,11 @@ export default function Display() {
         <CSSTransition classNames='power' appear in={!status} timeout={500}>
           <Button
             onClick={() =>
-              setState((state) => ({ ...state, status: !state.status }))
+              setState((state) => ({
+                ...state,
+                status: !state.status,
+                isRecord: false,
+              }))
             }
           >
             <FontAwesomeIcon className='power-btn' icon={faPowerOff} />
