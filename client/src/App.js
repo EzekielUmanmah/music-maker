@@ -1,9 +1,10 @@
-import React, { useRef, useState, createContext } from 'react';
+import React, { useRef, useState, createContext, useEffect } from 'react';
 import { Routes, Route, BrowserRouter as Router } from 'react-router-dom';
 
 import LandingPage from './Components/LandingPage/LandingPage';
 import Dashboard from './Components/Dashboard/Dashboard';
 import { GlobalStyle } from './styles';
+import axios from 'axios';
 
 export const AppContext = createContext();
 
@@ -21,6 +22,16 @@ export function App() {
   };
 
   const [state, setState] = useState(initialState);
+  const user = JSON.parse(localStorage.getItem('profile'));
+
+  useEffect(() => {
+    if (user) {
+      axios
+        .get(`http://localhost:4000/clips/${user.user_id}`)
+        .then((res) => setState((state) => ({ ...state, clips: res.data })))
+        .catch((err) => console.log('App getClips err: ', err));
+    }
+  }, [user]);
 
   return (
     <div className='app'>
