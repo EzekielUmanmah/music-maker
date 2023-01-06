@@ -13,7 +13,8 @@ export const MusicContainer = styled.section`
   display: flex;
   justify-content: center;
   align-self: center;
-  max-width: 55%;
+  max-width: 45%;
+  max-width: 500px;
   height: 50%;
   background-color: #212121;
   border-radius: 2%;
@@ -21,10 +22,10 @@ export const MusicContainer = styled.section`
 
   @media screen and (max-width: 678px) {
     flex-direction: column;
-    min-width: 60%;
+    max-width: 60%;
   }
 
   @media screen and (max-width: 476px) {
-    min-width: 80%;
+    max-width: 80%;
   }
 `;

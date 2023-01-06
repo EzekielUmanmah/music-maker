@@ -5,7 +5,7 @@ export const Container = styled.section`
   border-style: groove;
   border-radius: 2%;
   margin: 0.5em;
-  width: 80%;
+  width: 40%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -18,12 +18,11 @@ export const Container = styled.section`
 export const ContainerBtns = styled.div`
   display: flex;
   justify-content: space-between;
-  width: 40%;
+  width: 60%;
 
   @media screen and (max-width: 876px) {
-    flex-direction: column;
-    width: 10%;
-    justify-content: center;
+    width: 50%;
+    justify-content: space-between;
     padding: 0.5em;
   }
 `;
