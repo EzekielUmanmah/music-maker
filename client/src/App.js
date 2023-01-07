@@ -23,15 +23,18 @@ export function App() {
 
   const [state, setState] = useState(initialState);
   const user = JSON.parse(localStorage.getItem('profile'));
+  const id = user ? user.user_id : null;
 
   useEffect(() => {
-    if (user) {
+    if (id) {
       axios
-        .get(`http://localhost:4000/clips/${user.user_id}`)
-        .then((res) => setState((state) => ({ ...state, clips: res.data })))
+        .get(`http://localhost:4000/clips/${id}`)
+        .then((res) => {
+          setState((state) => ({ ...state, clips: res.data }));
+        })
         .catch((err) => console.log('App getClips err: ', err));
     }
-  }, [user]);
+  }, [id]);
 
   return (
     <div className='app'>
